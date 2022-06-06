@@ -6,6 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  numbers = [1, 2, 3, 4, 5];
-  onlyOdd = false;
+
+  oddElements: number[] = [];
+  evenElements: number[] = [];
+
+  handleNumberGeneratedEvent(n: number){
+    console.log("handling event: " + n);
+
+    if(n%2 === 0) {
+      console.log("handling even event: " + n);
+      this.evenElements.push(n);
+
+    } else {
+      console.log("handling odd event: " + n);
+      this.oddElements.push(n);
+
+    }
+  }
 }
